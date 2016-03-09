@@ -8794,7 +8794,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				"OTHER_LDFLAGS[arch=i386]" = (
@@ -8822,7 +8822,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				"OTHER_LDFLAGS[arch=i386]" = (
@@ -8850,7 +8850,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				"OTHER_LDFLAGS[arch=i386]" = (
@@ -8878,7 +8878,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				"OTHER_LDFLAGS[arch=i386]" = (
@@ -9186,7 +9186,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = genTexData;
@@ -9205,7 +9205,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = genTexData;
@@ -9224,9 +9224,10 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
+				"MACH_O_TYPE[arch=*]" = "";
 				PRODUCT_NAME = genMarkerSet;
 			};
 			name = Debug;
@@ -9243,7 +9244,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = genMarkerSet;
@@ -9262,7 +9263,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = dispImageSet;
@@ -9281,7 +9282,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = dispImageSet;
@@ -9300,7 +9301,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = dispFeatureSet;
@@ -9319,7 +9320,7 @@
 				);
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				PRODUCT_NAME = dispFeatureSet;
@@ -9648,7 +9649,7 @@
 				INFOPLIST_FILE = "Xcode/ARWrapper/ARWrapper-Info.plist";
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -9685,7 +9686,7 @@
 				INFOPLIST_FILE = "Xcode/ARWrapper/ARWrapper-Info.plist";
 				INSTALL_PATH = /bin;
 				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/lib/macosx-universal",
+					"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6",
 					"$(SRCROOT)/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -10066,7 +10067,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
 				INSTALL_PATH = /lib;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/lib/macosx-universal\"",
+					"\"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6\"",
 					"\"$(SRCROOT)/lib\"",
 				);
 				PRODUCT_NAME = ARvideo;
@@ -10088,7 +10089,7 @@
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/include\"";
 				INSTALL_PATH = /lib;
 				LIBRARY_SEARCH_PATHS = (
-					"\"$(SRCROOT)/lib/macosx-universal\"",
+					"\"$(SRCROOT)/lib/macosx-universal/OpenCV2.4.6\"",
 					"\"$(SRCROOT)/lib\"",
 				);
 				PRODUCT_NAME = ARvideo;
