@@ -166,7 +166,7 @@ public class ARToolKit {
 	 *            absolute path, or relative to the resourcesDirectoryPath set in initialiseNative().
      * @return true if initialisation was successful.
      */
-    public boolean initialiseAR(int videoWidth, int videoHeight, String cameraParaPath, int cameraIndex, boolean cameraIsFrontFacing) {
+    public boolean initialiseAR(int videoWidth, int videoHeight, String cameraParaPath, int cameraIndex, boolean cameraIsFrontFacing, String device) {
 
         if (!initedNative) {
             Log.e(TAG, "initialiseAR(): Cannot initialise camera because native interface not inited.");
@@ -177,8 +177,12 @@ public class ARToolKit {
         this.frameHeight = videoHeight;
         this.cameraIndex = cameraIndex;
         this.cameraIsFrontFacing = cameraIsFrontFacing;
-
-        if (!NativeInterface.arwStartRunning("-format=NV21", cameraParaPath, 10.0f, 10000.0f)) {
+        
+        String conf = "-format=NV21";
+        if (device != null) {
+            conf += "\ndevice_id=" + device;
+        }
+        if (!NativeInterface.arwStartRunning(conf, cameraParaPath, 10.0f, 10000.0f)) {
             Log.e(TAG, "initialiseAR(): Error starting video");
             return false;
         }
@@ -190,6 +194,9 @@ public class ARToolKit {
         return true;
     }
 
+    public boolean initialiseAR(int videoWidth, int videoHeight, String cameraParaPath, int cameraIndex, boolean cameraIsFrontFacing) {
+        return initialiseAR(videoWidth, videoHeight, cameraParaPath, cameraIndex, cameraIsFrontFacing, null);
+    }
     /**
      * Gets an updated debug image buffer from the native library and uses it to
      * update the local color array. This is then applied to the debug Bitmap, which

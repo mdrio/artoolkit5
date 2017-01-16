@@ -94,6 +94,7 @@ AR2VideoParamAndroidT *ar2VideoOpenAndroid( const char *config )
     int err_i = 0;
     int i;
     int width = 0, height = 0;
+    char device_id[PROP_VALUE_MAX*3+2]; 
     
     arMallocClear( vid, AR2VideoParamAndroidT, 1 );
     
@@ -159,7 +160,15 @@ AR2VideoParamAndroidT *ar2VideoOpenAndroid( const char *config )
             } else if( strncmp( line, "-source=", 8 ) == 0 ) {
                 if( sscanf( &line[8], "%d", &vid->camera_index ) == 0 ) err_i = 1;
 #endif
-            } else {
+            }
+            else if (strncmp( line, "-device_id=", 11 ) == 0)  {
+            
+                if( sscanf( &line[11], "%s", vid->device_id ) == 0 ) {
+                    ARLOGi("Set device_id to %s.\n", vid->device_id);
+                };
+            }
+
+            else {
                 err_i = 1;
             }
             
@@ -180,18 +189,20 @@ AR2VideoParamAndroidT *ar2VideoOpenAndroid( const char *config )
 #if AR_VIDEO_ANDROID_ENABLE_NATIVE_CAMERA
     vid->capturing = false;
 #endif
-    
-    // In lieu of identifying the actual camera, we use manufacturer/model/board to identify a device,
-    // and assume that identical devices have identical cameras.
-    // Handset ID, via <sys/system_properties.h>.
-    int len;
-    len = __system_property_get(ANDROID_OS_BUILD_MANUFACTURER, vid->device_id); // len = (int)strlen(device_id).
-    vid->device_id[len] = '/';
-    len++;
-    len += __system_property_get(ANDROID_OS_BUILD_MODEL, vid->device_id + len);
-    vid->device_id[len] = '/';
-    len++;
-    len += __system_property_get(ANDROID_OS_BUILD_BOARD, vid->device_id + len);
+   if (vid->device_id[0] == '\0'){
+        // In lieu of identifying the actual camera, we use manufacturer/model/board to identify a device,
+        // and assume that identical devices have identical cameras.
+        // Handset ID, via <sys/system_properties.h>.
+        int len;
+        len = __system_property_get(ANDROID_OS_BUILD_MANUFACTURER, vid->device_id); // len = (int)strlen(device_id).
+        vid->device_id[len] = '/';
+        len++;
+        len += __system_property_get(ANDROID_OS_BUILD_MODEL, vid->device_id + len);
+        vid->device_id[len] = '/';
+        len++;
+        len += __system_property_get(ANDROID_OS_BUILD_BOARD, vid->device_id + len);
+
+   } 
     
 #if AR_VIDEO_ANDROID_ENABLE_NATIVE_CAMERA
     // Open the camera connection. Until this is done, we can't set any properties of the stream.
