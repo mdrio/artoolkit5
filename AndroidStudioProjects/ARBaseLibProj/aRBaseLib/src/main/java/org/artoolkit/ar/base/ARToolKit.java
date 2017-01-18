@@ -180,7 +180,7 @@ public class ARToolKit {
         
         String conf = "-format=NV21";
         if (device != null) {
-            conf += "\ndevice_id=" + device;
+            conf += " -device_id=" + device;
         }
         if (!NativeInterface.arwStartRunning(conf, cameraParaPath, 10.0f, 10000.0f)) {
             Log.e(TAG, "initialiseAR(): Error starting video");
