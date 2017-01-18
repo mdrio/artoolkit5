@@ -105,6 +105,8 @@ AR2VideoParamAndroidT *ar2VideoOpenAndroid( const char *config )
             if( *a == '\0' ) break;
             
             if (sscanf(a, "%s", line) == 0) break;
+            
+            ARLOGi("Line %s.\n", line);
             if( strcmp( line, "-device=Android" ) == 0 ) {
             } else if( strncmp( line, "-width=", 7 ) == 0 ) {
                 if( sscanf( &line[7], "%d", &width ) == 0 ) {
@@ -162,10 +164,9 @@ AR2VideoParamAndroidT *ar2VideoOpenAndroid( const char *config )
 #endif
             }
             else if (strncmp( line, "-device_id=", 11 ) == 0)  {
-            
-                if( sscanf( &line[11], "%s", vid->device_id ) == 0 ) {
-                    ARLOGi("Set device_id to %s.\n", vid->device_id);
-                };
+                ARLOGi("device_id found: %s.\n", line + 11);
+                strcpy(vid->device_id, line + 11); 
+                ARLOGi("Set device_id to %s.\n", vid->device_id);
             }
 
             else {
